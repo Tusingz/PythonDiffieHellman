@@ -16,7 +16,7 @@ print('connecting to %s port %s' %server_address)
 sock.connect(server_address)
 
 try:   
-    private = generatePrivateKey(1024) #change this idk if this number is right
+    private = generatePrivateKey(1024)
     public = generatePublicKey(private, prime16, generator)
     print("Sending public key")
     sock.sendall(public.to_bytes(((public.bit_length() + 7) // 8), byteorder="big"))
